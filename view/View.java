@@ -64,7 +64,7 @@ public class View {
 
     public void paint(ArrayList<Piece> pieceList) {
         this.pieceList = pieceList;
-        panel.paintPiece(); // Pass the pieces to the panel
+        panel.repaint();
     }
 
     public int getCols(){
