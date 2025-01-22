@@ -89,7 +89,9 @@ public abstract class Piece {
         return name;
     }
 
-    public boolean canMoveTo(int newCol, int newRow){
-        return false;
-    }
+    // public boolean canMoveTo(int newCol, int newRow){
+    //     return false;
+    // }
+
+    public abstract boolean canMoveTo(int newCol, int newRow);
 }
