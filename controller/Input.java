@@ -42,6 +42,7 @@ public class Input extends MouseAdapter implements ActionListener, ComponentList
 
         if (pieceXY != null && blueTurn == pieceXY.getIsBlue()){
             controller.setResetSelectedPiece(pieceXY); //set selected piece to pieceXY
+	    controller.getView().paintValidMove();
         }
     }
     
