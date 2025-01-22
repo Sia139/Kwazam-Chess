@@ -26,10 +26,6 @@ public class Panel extends JPanel {
         setPreferredSize(new Dimension(Global.titleSize*cols, Global.titleSize*rows));
     }
 
-    public void paintPiece() {
-        repaint(); // Trigger repaint to draw the pieces
-    }
-
     private void calculateValidMoves(){
         validMoves.clear();
 
