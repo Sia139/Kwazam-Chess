@@ -1,0 +1,16 @@
+Biz,1,0,false
+Sau,2,0,false
+Biz,3,0,false
+Ram,0,1,false
+Ram,1,7,false
+Ram,3,2,false
+Sau,2,7,true
+Biz,3,7,true
+Ram,0,6,true
+Ram,2,3,true
+Ram,3,6,true
+Ram,4,0,true
+Tor,0,0,false
+Tor,0,7,true
+Xor,4,7,true
+19
