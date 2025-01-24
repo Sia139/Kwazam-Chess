@@ -1,8 +1,8 @@
-#Kwazam Chess
-##Overview
+# Kwazam Chess
+## Overview
 A Java-based chess game with a graphical interface built using Java Swing. Players can move pieces, capture opponents, and win by capturing the "Sau" (King). Features include board flipping, piece transformation, and save/load functionality.
 
-##Features
+## Features
 GUI: Visual chessboard with drag-and-drop piece movement.
 
 Piece Movement: Unique rules for each piece (e.g., Biz moves in L-shapes, Ram moves forward).
@@ -17,19 +17,19 @@ Save/Load: Save the game state and load it later.
 
 Check Detection: Notifies players when their Sau is in check.
 
-##How to Run
+## How to Run
 Prerequisites: Install JDK.
 
 Compile: Run javac *.java 
 
 Execute: Run java Main
 
-##Controls
+## Controls
 Mouse: Click to select, drag to move, and release to place pieces.
 
 Menu: New Game, Save, Load, and Exit options.
 
-##Project Structure
+## Project Structure
 controller: Handles game logic and input.
 
 model: Manages game state and pieces.
