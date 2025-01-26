@@ -62,7 +62,7 @@ public class Panel extends JPanel {
 
     //Lee,Sia
     @Override
-    protected void paintComponent(Graphics g) {
+    protected void paintComponent(Graphics g) { 
         super.paintComponent(g); // Clear the panel and prepare for drawing
         Graphics2D g2d = (Graphics2D) g;
 
