@@ -250,7 +250,6 @@ public class Controller {
                     reachEnd = Integer.parseInt(parts[4]);
 
                     Piece piece = pieceFactory.getPiece(name,col,row,isBlue);
-                    // pieceList.add(pieceFactory.getPiece(name,col,row,isBlue));
                     
                     if (name.equals("Ram") && reachEnd == -1){
                         Ram ram = (Ram) piece;
