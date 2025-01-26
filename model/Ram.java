@@ -47,6 +47,7 @@ public class Ram extends Piece {
         return false;
     }
 
+    //1211106818
     //Lee,Sia,Yeoh
     public void setReachEnd() {
         this.reachEnd = reachEnd == -1 ? 1 : -1;
