@@ -188,12 +188,11 @@ public class Controller {
         view.getPanel().repaint();
     }
     
-    //1211106319
     //Yeoh
-    public void saveGame(){  
+    public void saveGame(){  //1211106319
 
-        //haha
         String name, col, row, isBlue;
+        int reachEnd = 1;
 
         try (BufferedWriter clear = new BufferedWriter(new FileWriter("model\\src\\data.txt", false))) {/*1211106208*/
             clear.write("");
@@ -211,7 +210,13 @@ public class Controller {
                 col = String.valueOf(piece.getCol());
                 row = String.valueOf(piece.getRow());
                 isBlue = Boolean.toString(piece.getIsBlue());
-                bw.write(name + "," + col + "," + row + "," + isBlue);
+
+                if (name.equals("Ram")){
+                    Ram ram = (Ram) piece;
+                    reachEnd = ram.getReachEnd();
+                }
+
+                bw.write(name + "," + col + "," + row + "," + isBlue + "," + reachEnd);
                 bw.newLine();
             }
             bw.write(String.valueOf(turn));
@@ -228,7 +233,7 @@ public class Controller {
         int col;
         int row;
         boolean isBlue;
-        int loadTurn = 0;
+        int reachEnd, loadTurn = 0;
         PieceFactory pieceFactory = new PieceFactory();
         
         try(BufferedReader br = new BufferedReader(new FileReader("model\\src\\data.txt"))){
@@ -237,23 +242,24 @@ public class Controller {
             while((line = br.readLine())!= null){
                 String[] parts = line.split(",");
 
-                if(parts.length == 4){
+                if(parts.length == 5){
                     name = parts[0];
                     col = Integer.parseInt(parts[1]);
                     row = Integer.parseInt(parts[2]);
                     isBlue = Boolean.parseBoolean(parts[3]);
+                    reachEnd = Integer.parseInt(parts[4]);
+
                     Piece piece = pieceFactory.getPiece(name,col,row,isBlue);
                     // pieceList.add(pieceFactory.getPiece(name,col,row,isBlue));
-                    pieceList.add(piece);
-
-                    if (name.equals("Ram")){
+                    
+                    if (name.equals("Ram") && reachEnd == -1){
                         Ram ram = (Ram) piece;
-                        if (ram.getRow() == 0 || ram.getRow() == 7){
-                            ram.setReachEnd();
-                        }
+                        ram.setReachEnd();
                     }
-                }
 
+                    pieceList.add(piece);
+                }
+                
                 else if(parts.length == 1){ //get turn 
                     loadTurn = Integer.parseInt(parts[0]);
                 }
